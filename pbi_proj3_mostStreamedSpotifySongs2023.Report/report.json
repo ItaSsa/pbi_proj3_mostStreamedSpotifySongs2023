@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.44\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.45\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.45\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.45\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "layoutOptimization": 0,
   "resourcePackages": [
     {
@@ -41,16 +41,88 @@
       "name": "ReportSection",
       "visualContainers": [
         {
-          "config": "{\"name\":\"8dc18b0c88c4e8592816\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "config": "{\"name\":\"24edc90c5db51b888e3f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1253.6683417085426,\"y\":92.26130653266331,\"z\":3000,\"width\":193.5678391959799,\"height\":70.55276381909547,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data.artist(s)_name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"artist(s)_name\"},\"Name\":\"spotify_data.artist(s)_name\",\"NativeReferenceName\":\"artist(s)_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"artist(s)_name\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 70.55,
+          "width": 193.57,
+          "x": 1253.67,
+          "y": 92.26,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"2e85b8e572557defcf0e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":926.2311557788944,\"y\":92.26130653266331,\"z\":4000,\"width\":251.4572864321608,\"height\":97.68844221105527,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data.track_name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"},\"Name\":\"spotify_data.track_name\",\"NativeReferenceName\":\"track_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 97.69,
+          "width": 251.46,
+          "x": 926.23,
+          "y": 92.26,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"35e0c9be32d80191837c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1396.5829145728642,\"y\":211.65829145728642,\"z\":11000,\"width\":209.84924623115577,\"height\":150.15075376884423,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data.cover_url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"cover_url\"},\"Name\":\"spotify_data.cover_url\",\"NativeReferenceName\":\"cover_url\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"cover_url\"}}}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 150.15,
+          "width": 209.85,
+          "x": 1396.58,
+          "y": 211.66,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"3fa9dd21f05469b4f0b7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":83,\"y\":400.5,\"width\":687,\"height\":156,\"z\":8000,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Min(spotify_data.acousticness_%)\"},{\"queryRef\":\"Min(spotify_data.danceability_%)\"},{\"queryRef\":\"Min(spotify_data.liveness_%)\"},{\"queryRef\":\"Min(spotify_data.speechiness_%)\"},{\"queryRef\":\"Min(spotify_data.valence_%)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"acousticness_%\"}},\"Function\":3},\"Name\":\"Min(spotify_data.acousticness_%)\",\"NativeReferenceName\":\"acousticness_%\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"danceability_%\"}},\"Function\":3},\"Name\":\"Min(spotify_data.danceability_%)\",\"NativeReferenceName\":\"First danceability_%\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"liveness_%\"}},\"Function\":3},\"Name\":\"Min(spotify_data.liveness_%)\",\"NativeReferenceName\":\"First liveness_%\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"speechiness_%\"}},\"Function\":3},\"Name\":\"Min(spotify_data.speechiness_%)\",\"NativeReferenceName\":\"First speechiness_%\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"valence_%\"}},\"Function\":3},\"Name\":\"Min(spotify_data.valence_%)\",\"NativeReferenceName\":\"First valence_%\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 156.00,
+          "width": 687.00,
+          "x": 83.00,
+          "y": 400.50,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"4cc349e3f90482f0340b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":83.21608040201005,\"y\":226.13065326633165,\"z\":7000,\"width\":687.4371859296482,\"height\":155.57788944723617,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"spotify_data._Max Streamed\"},{\"queryRef\":\"Min(spotify_data.artist(s)_name)\"},{\"queryRef\":\"Min(spotify_data.artist_count)\"},{\"queryRef\":\"Min(spotify_data.date)\"},{\"queryRef\":\"Sum(spotify_data.streams)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"_Max Streamed\"},\"Name\":\"spotify_data._Max Streamed\",\"NativeReferenceName\":\"_Max Streamed\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"artist(s)_name\"}},\"Function\":3},\"Name\":\"Min(spotify_data.artist(s)_name)\",\"NativeReferenceName\":\"First artist(s)_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"artist_count\"}},\"Function\":3},\"Name\":\"Min(spotify_data.artist_count)\",\"NativeReferenceName\":\"First artist_count\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"date\"}},\"Function\":3},\"Name\":\"Min(spotify_data.date)\",\"NativeReferenceName\":\"Earliest date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}},\"Function\":0},\"Name\":\"Sum(spotify_data.streams)\",\"NativeReferenceName\":\"streams\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"_Max Streamed\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[{\"name\":\"Filter0b5b71c9c39ae9e04394\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"spotify_data\"}},\"Property\":\"streams\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"_Max Streamed\"}}}],\"Top\":1}}},\"Type\":2},{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":1}]",
+          "height": 155.58,
+          "width": 687.44,
+          "x": 83.22,
+          "y": 226.13,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"77ce63f470e8100cbe64\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1072.7638190954774,\"y\":211.65829145728642,\"z\":10000,\"width\":247.83919597989947,\"height\":104.92462311557789,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data._Top song vs AVG\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"_Top song vs AVG\"},\"Name\":\"spotify_data._Top song vs AVG\",\"NativeReferenceName\":\"_Top song vs AVG\"}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.92,
+          "width": 247.84,
+          "x": 1072.76,
+          "y": 211.66,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"86db70c251041e31b546\",\"layouts\":[{\"id\":0,\"position\":{\"x\":833.9698492462311,\"y\":211.65829145728642,\"z\":9000,\"width\":218.89447236180902,\"height\":104.92462311557789,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data._Avarage Stream per Year\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"_Avarage Stream per Year\"},\"Name\":\"spotify_data._Avarage Stream per Year\",\"NativeReferenceName\":\"_Avarage Stream per Year\"}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 104.92,
+          "width": 218.89,
+          "x": 833.97,
+          "y": 211.66,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"8dc18b0c88c4e8592816\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
           "filters": "[]",
           "height": 40.00,
           "width": 100.00,
           "x": 0.00,
           "y": 0.00,
-          "z": 1.00
+          "z": 1000.00
         },
         {
-          "config": "{\"name\":\"abdc394a6bfb2d72cd66\",\"layouts\":[{\"id\":0,\"position\":{\"x\":83.21608040201005,\"y\":595.1758793969849,\"z\":0,\"width\":701.9095477386934,\"height\":323.8190954773869}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"spotify_data.track_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(spotify_data.streams)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"},\"Name\":\"spotify_data.track_name\",\"NativeReferenceName\":\"track_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}},\"Function\":0},\"Name\":\"Sum(spotify_data.streams)\",\"NativeReferenceName\":\"streams\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"9048820ddb4485c43289\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1479.7989949748742,\"y\":99.49748743718592,\"z\":6000,\"width\":209.84924623115577,\"height\":81.40703517587939,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"Date.Year\",\"NativeReferenceName\":\"Year\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 81.41,
+          "width": 209.85,
+          "x": 1479.80,
+          "y": 99.50,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"abdc394a6bfb2d72cd66\",\"layouts\":[{\"id\":0,\"position\":{\"x\":83.21608040201005,\"y\":595.1758793969849,\"z\":0,\"width\":701.9095477386934,\"height\":323.8190954773869,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"spotify_data.track_name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(spotify_data.streams)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"},\"Name\":\"spotify_data.track_name\",\"NativeReferenceName\":\"track_name\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}},\"Function\":0},\"Name\":\"Sum(spotify_data.streams)\",\"NativeReferenceName\":\"streams\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"streams\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
           "height": 323.82,
           "width": 701.91,
@@ -59,13 +131,22 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"b18e2eb01e6fd3f87140\",\"layouts\":[{\"id\":0,\"position\":{\"x\":846.6331658291457,\"y\":665.7286432160804,\"z\":2,\"width\":982.3115577889447,\"height\":253.26633165829145,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(spotify_data.track_name)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"Date.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"}},\"Function\":5},\"Name\":\"CountNonNull(spotify_data.track_name)\",\"NativeReferenceName\":\"Count of track_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"b18e2eb01e6fd3f87140\",\"layouts\":[{\"id\":0,\"position\":{\"x\":846.6331658291457,\"y\":665.7286432160804,\"z\":2000,\"width\":982.3115577889447,\"height\":253.26633165829145,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(spotify_data.track_name)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"Date.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"track_name\"}},\"Function\":5},\"Name\":\"CountNonNull(spotify_data.track_name)\",\"NativeReferenceName\":\"Count of track_name\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
           "height": 253.27,
           "width": 982.31,
           "x": 846.63,
           "y": 665.73,
-          "z": 2.00
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"ea31116c1be120ca2e4f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":591.5577889447236,\"y\":92.26130653266331,\"z\":5000,\"width\":309.3467336683417,\"height\":97.68844221105527,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"Date.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 97.69,
+          "width": 309.35,
+          "x": 591.56,
+          "y": 92.26,
+          "z": 5000.00
         }
       ],
       "width": 1920.00

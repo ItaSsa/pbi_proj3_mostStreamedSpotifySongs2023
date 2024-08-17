@@ -457,6 +457,7 @@
                 "value": "Automatic"
               }
             ],
+            "dataCategory": "ImageUrl",
             "dataType": "string",
             "lineageTag": "ec8a4535-4d73-4a35-8a34-6e1cff5cb7b7",
             "sourceColumn": "cover_url",
@@ -750,6 +751,73 @@
           }
         ],
         "lineageTag": "a427daa0-393a-40a8-a031-048262b224e2",
+        "measures": [
+          {
+            "name": "_Max Streamed",
+            "expression": "MAX(spotify_data[streams])",
+            "formatString": "0",
+            "lineageTag": "a8e82ea8-11fe-4177-889c-680328c32f62"
+          },
+          {
+            "name": "_Top Song Streams",
+            "expression": [
+              "",
+              "    CALCULATE(",
+              "          SUM(spotify_data[streams]),",
+              "          spotify_data[streams] = Max(spotify_data[streams])",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "3e517f1e-341f-4280-9bdd-9dd9ea998c82"
+          },
+          {
+            "name": "_Avarage Stream per Year",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "   CALCULATE(",
+              "         AVERAGE(spotify_data[streams]),",
+              "         ALLEXCEPT(spotify_data,'Date'[Year])",
+              "   )"
+            ],
+            "lineageTag": "0c6adbe1-a71d-4287-8828-58baaaeeeb92"
+          },
+          {
+            "name": "_Top Songs vs avg val",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "      CALCULATE(",
+              "          DIVIDE([_Top Song Streams]-[_Avarage Stream per Year],",
+              "                [_Avarage Stream per Year]",
+              "          )",
+              "      )"
+            ],
+            "lineageTag": "40d5228b-00a2-4494-9c78-8b52d2c8e84b"
+          },
+          {
+            "name": "_Top song vs AVG",
+            "expression": [
+              "",
+              "    VAR x = [_Top Songs vs avg val]",
+              "RETURN",
+              "    IF(X>0,",
+              "           FORMAT(x,\"#.0%\")&\"\"& UNICHAR(9650),",
+              "           FORMAT(x,\"#.0%\")&\"\"& UNICHAR(9660))"
+            ],
+            "lineageTag": "1583a241-6326-4fdf-86f6-48c3528b5a56"
+          }
+        ],
         "partitions": [
           {
             "name": "spotify_data-0bd19693-6f03-4a7f-b634-fad4835353bd",
