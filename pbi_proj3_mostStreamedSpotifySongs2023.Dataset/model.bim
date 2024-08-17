@@ -144,57 +144,6 @@
         ],
         "dataCategory": "Time",
         "lineageTag": "cdca1ef0-b9cf-4cd7-9b98-45b42bb7b982",
-        "measures": [
-          {
-            "name": "_Image url",
-            "expression": [
-              "",
-              "    Var url_value = ",
-              "        CALCULATE(",
-              "            MAX(spotify_data[cover_url]),",
-              "            spotify_data[streams] = MAX(spotify_data[streams])",
-              "        )",
-              "Return",
-              "\"",
-              "<!DOCTYPE html>",
-              "<html lang='en'>",
-              "<head>",
-              "    <meta charset='UTF-8'>",
-              "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
-              "    <style>",
-              "        .image-container {",
-              "            width: 400px; /* Set your desired width here */",
-              "            height: 120px; /* Set your desired height here */",
-              "            overflow: hidden;",
-              "            border-radius: 20px; /* Adjust for rounded corners */",
-              "            position: relative;",
-              "            display: flex;",
-              "            justify-content: center;",
-              "            align-items: center;",
-              "        }",
-              "",
-              "        .image-container img {",
-              "            position: absolute;",
-              "            width: 100%;",
-              "            height: auto;",
-              "            top: 50%;",
-              "            transform: translateY(-50%);",
-              "        }",
-              "    </style>",
-              "    <title>Adjustable Image with Rounded Corners</title>",
-              "</head>",
-              "<body>",
-              "    <div class='image-container'>",
-              "        <img src=' \"& url_value &\"' alt='Centered Image'>",
-              "    </div>",
-              "</body>",
-              "</html>",
-              "",
-              "\""
-            ],
-            "lineageTag": "3bbcc0e3-1b33-4289-bdac-101d4ebfd733"
-          }
-        ],
         "partitions": [
           {
             "name": "Date-11183253-9b46-4c25-993a-433d9c03c791",
@@ -558,12 +507,21 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "double",
             "lineageTag": "a3312e85-0569-4ce6-85ef-bfd2e316dea6",
             "sourceColumn": "energy_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "in_apple_charts",
@@ -867,6 +825,64 @@
               "           FORMAT(x,\"#.0%\")&\"\"& UNICHAR(9660))"
             ],
             "lineageTag": "1583a241-6326-4fdf-86f6-48c3528b5a56"
+          },
+          {
+            "name": "_Image url",
+            "expression": [
+              "",
+              "    Var url_value = ",
+              "        CALCULATE(",
+              "            MAX(spotify_data[cover_url]),",
+              "            spotify_data[streams] = MAX(spotify_data[streams])",
+              "        )",
+              "Return",
+              "\"",
+              "<!DOCTYPE html>",
+              "<html lang='en'>",
+              "<head>",
+              "    <meta charset='UTF-8'>",
+              "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+              "    <style>",
+              "        .image-container {",
+              "            width: 400px; /* Set your desired width here */",
+              "            height: 120px; /* Set your desired height here */",
+              "            overflow: hidden;",
+              "            border-radius: 20px; /* Adjust for rounded corners */",
+              "            position: relative;",
+              "            display: flex;",
+              "            justify-content: center;",
+              "            align-items: center;",
+              "        }",
+              "",
+              "        .image-container img {",
+              "            position: absolute;",
+              "            width: 100%;",
+              "            height: auto;",
+              "            top: 50%;",
+              "            transform: translateY(-50%);",
+              "        }",
+              "    </style>",
+              "    <title>Adjustable Image with Rounded Corners</title>",
+              "</head>",
+              "<body>",
+              "    <div class='image-container'>",
+              "        <img src=' \"& url_value &\"' alt='Centered Image'>",
+              "    </div>",
+              "</body>",
+              "</html>",
+              "",
+              "\""
+            ],
+            "lineageTag": "3bbcc0e3-1b33-4289-bdac-101d4ebfd733"
+          },
+          {
+            "name": "_Percent_val",
+            "expression": [
+              "",
+              "    AVERAGE(spotify_data[energy_%])"
+            ],
+            "formatString": "0",
+            "lineageTag": "7f7c9c5e-9b04-4ed5-a41f-4d8b7e88e29c"
           }
         ],
         "partitions": [
