@@ -1,5 +1,5 @@
 {
-  "compatibilityLevel": 1550,
+  "compatibilityLevel": 1567,
   "model": {
     "annotations": [
       {
@@ -9,6 +9,14 @@
       {
         "name": "PBIDesktopVersion",
         "value": "2.118.828.0 (23.06)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"spotify_data\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
       }
     ],
     "culture": "en-US",
@@ -23,6 +31,743 @@
           },
           "contentType": "json"
         }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "2e6019a0-c4f8-44d1-a74b-241a46f70f19",
+        "fromColumn": "date",
+        "fromTable": "spotify_data",
+        "toColumn": "Date",
+        "toTable": "Date"
+      }
+    ],
+    "sourceQueryCulture": "en-NL",
+    "tables": [
+      {
+        "name": "Date",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "be368dc3d4c649d49fc07a7e619deba1"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isKey": true,
+            "isNameInferred": true,
+            "lineageTag": "be999173-1ddd-4abe-b43c-022b2ed65dc1",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DateKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "80dcf0a1-f160-4787-989e-8c0f762f187a",
+            "sourceColumn": "[DateKey]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "MonthName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b4e4eb2f-d773-4e08-9833-419b51613b0e",
+            "sourceColumn": "[MonthName]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "MonthNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ffbc1afb-a637-401d-aa75-44ef6fe3c45c",
+            "sourceColumn": "[MonthNumber]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "fcb5f801-2d76-43d7-9546-7504e66eef9f",
+            "sourceColumn": "[Year]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "cdca1ef0-b9cf-4cd7-9b98-45b42bb7b982",
+        "partitions": [
+          {
+            "name": "Date-11183253-9b46-4c25-993a-433d9c03c791",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "    var minYear = MIN(spotify_data[date])",
+                "    var maxYear = MAX(spotify_data[date])",
+                "    RETURN ",
+                "    ADDCOLUMNS(",
+                "            CALENDAR(minYear,maxYear),",
+                "            \"DateKey\", FORMAT ([Date], \"yyyymmdd\"),",
+                "            \"Year\", YEAR(([Date])),",
+                "            \"MonthName\", FORMAT([Date], \"mmmm\"),",
+                "            \"MonthNumber\", FORMAT([Date], \"m\")",
+                "    )"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_ed94d37d-2016-490f-82a0-2bcb4c779e17",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "bed319d6-7aad-4860-8e79-c99de515a922",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "9c41d4e9-8260-482e-99ce-65c0168c2e8e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "32db755f-c34a-4495-94c9-a897ad746e73",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "6e34b4a7-b686-424f-bd63-3279be2e6d13",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "61200961-5f45-43d0-b6a6-d66f4ab6c3be",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "de20eaa7-c5af-40bb-961a-ea8e9641711d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "56979180-1b64-45cb-be8e-7971c26edd29",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "464c503f-9479-4140-b46e-7ece325c85a5",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "1b09bacf-fbc0-418c-b089-51bb0ae08dd5",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "94d6e03c-a49c-4595-ae6e-a0cb04c7e5bb",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "302684be-6ad4-4097-86b9-52dd4d0ab157",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "ea04b4d0-83bc-41c8-8b15-a1aa6db75da5"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "8304d1a7-def2-4d92-ba91-9b15571241a6",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_ed94d37d-2016-490f-82a0-2bcb4c779e17-75116859-88f6-4d9f-bca4-c2ba728908d3",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "spotify_data",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "acousticness_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "daa783a9-9bc8-43ca-a266-7de67e79371e",
+            "sourceColumn": "acousticness_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "artist(s)_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8ae8ca4a-50f3-441c-885a-981afa55dea3",
+            "sourceColumn": "artist(s)_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "artist_count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bca0cfd6-e8ec-4c57-8753-a48e15461d34",
+            "sourceColumn": "artist_count",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bpm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "41ab547f-74ce-4ee4-8ce7-c4151ccc39e1",
+            "sourceColumn": "bpm",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cover_url",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ec8a4535-4d73-4a35-8a34-6e1cff5cb7b7",
+            "sourceColumn": "cover_url",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "danceability_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7e9be4ad-37a4-4585-b750-675d06c8fe2e",
+            "sourceColumn": "danceability_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "dateTime",
+            "expression": "DATE(spotify_data[released_year],spotify_data[released_month],spotify_data[released_day])",
+            "formatString": "Short Date",
+            "isDataTypeInferred": true,
+            "lineageTag": "9468a3d4-b2af-46ac-b160-3639c2036b34",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "energy_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a3312e85-0569-4ce6-85ef-bfd2e316dea6",
+            "sourceColumn": "energy_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_apple_charts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "06e94fe5-1170-43d3-9387-ad041242e332",
+            "sourceColumn": "in_apple_charts",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_apple_playlists",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e6ac72a6-d1c8-498a-a9db-4e49e8eb3110",
+            "sourceColumn": "in_apple_playlists",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_deezer_charts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c85392af-7a84-4e60-b5bd-acc6e7077e3a",
+            "sourceColumn": "in_deezer_charts",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_deezer_playlists",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "df3df0ff-ba28-4c97-b455-7e9627e500c4",
+            "sourceColumn": "in_deezer_playlists",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_shazam_charts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "215458c7-1910-4158-bb28-039c1af3582a",
+            "sourceColumn": "in_shazam_charts",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_spotify_charts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "716e3cbb-6e3a-46df-b3af-3b56459c032e",
+            "sourceColumn": "in_spotify_charts",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "in_spotify_playlists",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3561a9ce-954d-4453-b7c4-b5e427d8f15d",
+            "sourceColumn": "in_spotify_playlists",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "instrumentalness_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "60c3bad6-9c64-4b22-9a37-562a801754b5",
+            "sourceColumn": "instrumentalness_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "key",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "11286c56-0ab9-44d0-a685-68b23080d3e5",
+            "sourceColumn": "key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "liveness_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6bb72d7e-c2a5-47fa-9673-f307495813b7",
+            "sourceColumn": "liveness_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "653ed201-ff8a-4aa8-a42e-ab07828e65cc",
+            "sourceColumn": "mode",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "released_day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "12d3044e-0df3-412a-be28-80609cb9a2de",
+            "sourceColumn": "released_day",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "released_month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "01fda24c-23a5-43cc-86c3-19c31eada7bd",
+            "sourceColumn": "released_month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "released_year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c83b12dd-a199-4413-91df-7b85eb4bfa3f",
+            "sourceColumn": "released_year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "speechiness_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5158da14-1b58-467b-82b2-69c4d8660cc1",
+            "sourceColumn": "speechiness_%",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "streams",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8b0da6e3-4afc-4e2a-afc3-f7fe2cf5c588",
+            "sourceColumn": "streams",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "track_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3c22f6a5-1307-4e5f-a313-88318a57b649",
+            "sourceColumn": "track_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "valence_%",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cd7b0d91-b9ca-46ce-96ff-10bb70ebd293",
+            "sourceColumn": "valence_%",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a427daa0-393a-40a8-a031-048262b224e2",
+        "partitions": [
+          {
+            "name": "spotify_data-0bd19693-6f03-4a7f-b634-fad4835353bd",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\pbi_proj3_mostStreamedSpotifySongs2023\\dataset\\spotify_data.csv\"),[Delimiter=\",\", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"streams\", Int64.Type}}),",
+                "    #\"Removed Errors\" = Table.RemoveRowsWithErrors(#\"Changed Type\", {\"streams\"})",
+                "in",
+                "    #\"Removed Errors\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
       }
     ]
   }
