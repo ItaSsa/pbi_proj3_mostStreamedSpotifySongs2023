@@ -1,6 +1,9 @@
 {
-  "config": "{\"version\":\"5.45\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.45\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.45\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.45\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
@@ -59,12 +62,12 @@
           "z": 4000.00
         },
         {
-          "config": "{\"name\":\"35e0c9be32d80191837c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1396.5829145728642,\"y\":211.65829145728642,\"z\":11000,\"width\":209.84924623115577,\"height\":150.15075376884423,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"spotify_data.cover_url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"spotify_data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"cover_url\"},\"Name\":\"spotify_data.cover_url\",\"NativeReferenceName\":\"cover_url\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"cover_url\"}}}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"3a54c133adf5a7b7bc24\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1353.1658291457286,\"y\":200.8040201005025,\"z\":11000,\"width\":475.7788944723618,\"height\":128.44221105527637,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"htmlContent443BE3AD55E043BF878BED274D3A6855\",\"projections\":{\"content\":[{\"queryRef\":\"Date._Image url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"_Image url\"},\"Name\":\"Date._Image url\",\"NativeReferenceName\":\"_Image url\"}]},\"autoSelectVisualType\":false,\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 150.15,
-          "width": 209.85,
-          "x": 1396.58,
-          "y": 211.66,
+          "height": 128.44,
+          "width": 475.78,
+          "x": 1353.17,
+          "y": 200.80,
           "z": 11000.00
         },
         {
