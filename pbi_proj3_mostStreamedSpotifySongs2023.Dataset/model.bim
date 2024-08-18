@@ -93,7 +93,7 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "MonthName",
+            "name": "Day of Week",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -103,8 +103,26 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "b4e4eb2f-d773-4e08-9833-419b51613b0e",
-            "sourceColumn": "[MonthName]",
+            "lineageTag": "d3fbe927-1375-40dc-a2c4-415f8abdc7ec",
+            "sortByColumn": "Weekday",
+            "sourceColumn": "[Day of Week]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "370d96be-9d7c-437a-8681-a0934c566e01",
+            "sortByColumn": "MonthNumber",
+            "sourceColumn": "[Month]",
             "summarizeBy": "none",
             "type": "calculatedTableColumn"
           },
@@ -116,11 +134,29 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "dataType": "int64",
+            "formatString": "0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
             "lineageTag": "ffbc1afb-a637-401d-aa75-44ef6fe3c45c",
             "sourceColumn": "[MonthNumber]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Weekday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "6c793614-b379-4f1c-b036-7d53881ffef2",
+            "sourceColumn": "[Weekday]",
             "summarizeBy": "none",
             "type": "calculatedTableColumn"
           },
@@ -158,8 +194,10 @@
                 "            CALENDAR(minYear,maxYear),",
                 "            \"DateKey\", FORMAT ([Date], \"yyyymmdd\"),",
                 "            \"Year\", YEAR(([Date])),",
-                "            \"MonthName\", FORMAT([Date], \"mmmm\"),",
-                "            \"MonthNumber\", FORMAT([Date], \"m\")",
+                "            \"Month\", FORMAT([Date], \"mmm\"),",
+                "            \"MonthNumber\", MONTH([Date]),",
+                "            \"Day of Week\", FORMAT([Date], \"ddd\"),",
+                "            \"Weekday\",WEEKDAY([Date], 2)",
                 "    )"
               ],
               "type": "calculated"
@@ -844,8 +882,8 @@
               "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
               "    <style>",
               "        .image-container {",
-              "            width: 400px; /* Set your desired width here */",
-              "            height: 120px; /* Set your desired height here */",
+              "            width: 329px; /* Set your desired width here */",
+              "            height: 427px; /* Set your desired height here */",
               "            overflow: hidden;",
               "            border-radius: 20px; /* Adjust for rounded corners */",
               "            position: relative;",
@@ -883,6 +921,25 @@
             ],
             "formatString": "0",
             "lineageTag": "7f7c9c5e-9b04-4ed5-a41f-4d8b7e88e29c"
+          },
+          {
+            "name": "_Track",
+            "expression": "COUNT(spotify_data[track_name])",
+            "formatString": "0",
+            "lineageTag": "14d6fdf3-54cf-4bca-b451-28ff682224ef"
+          },
+          {
+            "name": "_total streamed",
+            "expression": [
+              "",
+              "IF(",
+              "    ISBLANK(COUNT(spotify_data[streams])),",
+              "    0,",
+              "   COUNT(spotify_data[streams])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "8719a1e8-1c98-4248-85c3-d536e00e063a"
           }
         ],
         "partitions": [
