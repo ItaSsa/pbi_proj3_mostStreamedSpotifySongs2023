@@ -443,10 +443,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Amount of acoustic sound in the song",
+            "formatString": "0",
             "lineageTag": "daa783a9-9bc8-43ca-a266-7de67e79371e",
             "sourceColumn": "acousticness_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "artist(s)_name",
@@ -457,6 +464,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Name of the artist(s) of the song",
             "lineageTag": "8ae8ca4a-50f3-441c-885a-981afa55dea3",
             "sourceColumn": "artist(s)_name",
             "summarizeBy": "none"
@@ -469,10 +477,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Number of artists contributing to the song",
+            "formatString": "0",
             "lineageTag": "bca0cfd6-e8ec-4c57-8753-a48e15461d34",
             "sourceColumn": "artist_count",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "bpm",
@@ -509,10 +524,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Percentage indicating how suitable the song is for dancing",
+            "formatString": "0",
             "lineageTag": "7e9be4ad-37a4-4585-b750-675d06c8fe2e",
             "sourceColumn": "danceability_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "date",
@@ -557,6 +579,7 @@
               }
             ],
             "dataType": "double",
+            "description": "Perceived energy level of the song",
             "lineageTag": "a3312e85-0569-4ce6-85ef-bfd2e316dea6",
             "sourceColumn": "energy_%",
             "summarizeBy": "sum"
@@ -635,6 +658,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Presence and rank of the song on Spotify charts",
             "lineageTag": "716e3cbb-6e3a-46df-b3af-3b56459c032e",
             "sourceColumn": "in_spotify_charts",
             "summarizeBy": "none"
@@ -648,6 +672,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Number of Spotify playlists the song is included in",
             "lineageTag": "3561a9ce-954d-4453-b7c4-b5e427d8f15d",
             "sourceColumn": "in_spotify_playlists",
             "summarizeBy": "none"
@@ -686,10 +711,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Presence of live performance elements",
+            "formatString": "0",
             "lineageTag": "6bb72d7e-c2a5-47fa-9673-f307495813b7",
             "sourceColumn": "liveness_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "mode",
@@ -700,6 +732,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Mode of the song (major or minor)",
             "lineageTag": "653ed201-ff8a-4aa8-a42e-ab07828e65cc",
             "sourceColumn": "mode",
             "summarizeBy": "none"
@@ -713,6 +746,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Day of the month when the song was released",
             "lineageTag": "12d3044e-0df3-412a-be28-80609cb9a2de",
             "sourceColumn": "released_day",
             "summarizeBy": "none"
@@ -726,6 +760,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Month when the song was released",
             "lineageTag": "01fda24c-23a5-43cc-86c3-19c31eada7bd",
             "sourceColumn": "released_month",
             "summarizeBy": "none"
@@ -739,6 +774,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Year when the song was released",
             "lineageTag": "c83b12dd-a199-4413-91df-7b85eb4bfa3f",
             "sourceColumn": "released_year",
             "summarizeBy": "none"
@@ -751,10 +787,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Amount of spoken words in the song",
+            "formatString": "0",
             "lineageTag": "5158da14-1b58-467b-82b2-69c4d8660cc1",
             "sourceColumn": "speechiness_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           },
           {
             "name": "streams",
@@ -765,6 +808,10 @@
               }
             ],
             "dataType": "int64",
+            "description": [
+              "Total number of streams on Spotify.",
+              "Spotify monthly listeners refer to how many people listened to a particular artist in 28 days. Spotify streams refer to how many times a song is played. Note: If your number of listeners are same but your streams are increasing, it means that the same people are listening to the song again and again."
+            ],
             "formatString": "0",
             "lineageTag": "8b0da6e3-4afc-4e2a-afc3-f7fe2cf5c588",
             "sourceColumn": "streams",
@@ -779,6 +826,7 @@
               }
             ],
             "dataType": "string",
+            "description": "Name of the song",
             "lineageTag": "3c22f6a5-1307-4e5f-a313-88318a57b649",
             "sourceColumn": "track_name",
             "summarizeBy": "none"
@@ -791,10 +839,17 @@
                 "value": "Automatic"
               }
             ],
-            "dataType": "string",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "description": "Positivity of the song's musical content",
+            "formatString": "0",
             "lineageTag": "cd7b0d91-b9ca-46ce-96ff-10bb70ebd293",
             "sourceColumn": "valence_%",
-            "summarizeBy": "none"
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "a427daa0-393a-40a8-a031-048262b224e2",
@@ -882,29 +937,25 @@
               "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
               "    <style>",
               "        .image-container {",
-              "            width: 350px; /* Set your desired width here */",
-              "            height: 400px; /* Set your desired height here */",
+              "            width: 380px; /* Set your desired width here */",
+              "            height: 465px; /* Set your desired height here */",
               "            overflow: hidden;",
-              "            border-radius: 20px; /* Adjust for rounded corners */",
+              "            border-radius: 15px; /* Adjust for rounded corners */",
               "            position: relative;",
-              "            display: flex;",
-              "            justify-content: center;",
-              "            align-items: center;",
               "        }",
               "",
-              "        .image-container img {",
-              "            position: absolute;",
-              "            width: 100%;",
-              "            height: auto;",
-              "            top: 50%;",
-              "            transform: translateY(-50%);",
+              "        .image {",
+              "            object-fit=cover; /*cover the entire container*/",
+              "            object-position=center; /*center the image*/",
+              "            width:100%;",
+              "            height:100%;",
               "        }",
               "    </style>",
               "    <title>Adjustable Image with Rounded Corners</title>",
               "</head>",
               "<body>",
               "    <div class='image-container'>",
-              "        <img src=' \"& url_value &\"' alt='Centered Image'>",
+              "        <img src=' \"& url_value &\"' alt='Album cover' class='image'>",
               "    </div>",
               "</body>",
               "</html>",
@@ -940,6 +991,32 @@
             ],
             "formatString": "0",
             "lineageTag": "8719a1e8-1c98-4248-85c3-d536e00e063a"
+          },
+          {
+            "name": "_Total Artists",
+            "expression": [
+              "",
+              "    CALCULATE(",
+              "          SUM(spotify_data[artist_count]),",
+              "          spotify_data[artist_count] = Max(spotify_data[artist_count])",
+              "    )"
+            ],
+            "formatString": "0",
+            "lineageTag": "db5944da-6e65-4ce6-8556-5143996e3511"
+          },
+          {
+            "name": "_Percent_valence",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "    AVERAGE(spotify_data[valence_%])"
+            ],
+            "lineageTag": "b8ce1bdf-b039-47bd-bbf5-d411b75ce8d5"
           }
         ],
         "partitions": [
